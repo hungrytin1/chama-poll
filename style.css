@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+    pointer-events: auto; /* Allow grid interactions */
+}
+
+.grid-item {
+    background-color: #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.grid-item.clicked {
+    pointer-events: none; /* Prevent clicking again */
+    color: #fff; /* Show the number */
+    background-color: #000; /* Change the background color */
+}
+
+.grid-container.locked {
+    pointer-events: none; /* Prevent any further interaction with the grid */
+}
